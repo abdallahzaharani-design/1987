@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: whatsapp-cloud-bot
+    env: node
+    region: frankfurt
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    plan: free
+    healthCheckPath: "/"
+    envVars:
+      - key: VERIFY_TOKEN
+        sync: false
+      - key: WHATSAPP_TOKEN
+        sync: false
+      - key: PHONE_NUMBER_ID
+        sync: false
